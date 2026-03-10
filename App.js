@@ -12,8 +12,6 @@ import Quizzes from './screens/Quizzes';
 
 const Tab = createBottomTabNavigator();
 
-// ─── HOW MUCH BOTTOM PADDING YOUR SCREENS NEED ───────────────────────────────
-// Export this so screens can import it and add paddingBottom to their lists
 export const TAB_BAR_HEIGHT = 86; // 70px bar + 16px bottom offset
 
 function Tabs() {
@@ -24,7 +22,7 @@ function Tabs() {
     <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          // ── Header ──────────────────────────────────────────────────────────
+
           headerShown: true,
           headerTitleAlign: 'center',
           headerStyle: {
@@ -39,13 +37,9 @@ function Tabs() {
             letterSpacing: 0.5,
           },
 
-          // ── Tab bar colours ──────────────────────────────────────────────────
           tabBarActiveTintColor: isDarkMode ? '#ffffff' : '#0f172a',
           tabBarInactiveTintColor: isDarkMode ? '#64748b' : '#94a3b8',
 
-          // ── Tab bar style ────────────────────────────────────────────────────
-          // KEY FIX: position is 'absolute' but we compensate with
-          // tabBarStyle.paddingBottom so React Navigation knows the real height
           tabBarStyle: {
             position: 'absolute',
             left: 16,
@@ -62,8 +56,7 @@ function Tabs() {
             elevation: 20,
           },
 
-          // ── KEY FIX: tells React Navigation the real height so it pushes ──
-          // ── screen content up automatically ─────────────────────────────────
+          
           tabBarItemStyle: {
             paddingVertical: 8,
           },
@@ -73,7 +66,6 @@ function Tabs() {
             marginBottom: 6,
           },
 
-          // ── Icons ────────────────────────────────────────────────────────────
           tabBarIcon: ({ focused, color }) => {
             let iconName;
             switch (route.name) {
@@ -94,8 +86,7 @@ function Tabs() {
             );
           },
 
-          // ── KEY FIX: this is what actually prevents content going behind ──
-          // ── the tab bar. Must equal bar height + bottom offset ───────────────
+        
           sceneContainerStyle: {
             paddingBottom: TAB_BAR_HEIGHT,
           },

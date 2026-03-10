@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  useColorScheme,
-  Image,
-  ScrollView,
-  TouchableOpacity,
-  Linking,
-} from 'react-native';
+import { View,Text,StyleSheet,useColorScheme,Image,ScrollView,TouchableOpacity,Linking,} from 'react-native';
 
 export default function Home({ navigation }) {
   const colorScheme = useColorScheme();
