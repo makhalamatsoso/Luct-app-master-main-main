@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  useColorScheme,
-  ScrollView,
-  Image,
-  Linking,
-} from 'react-native';
+import {View,Text,FlatList,TouchableOpacity,StyleSheet,useColorScheme,ScrollView,Image,Linking,} from 'react-native';
 
 //FACULTY DATA (from 2023 LUCT Prospectus) 
 const faculties = [
