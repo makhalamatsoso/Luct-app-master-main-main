@@ -8,19 +8,18 @@ export default function Home({ navigation }) {
   const logoUrl =
     'https://www.gov.ls/wp-content/uploads/2022/05/limkokwing.jpeg';
   const images = {
-    // Black African students on campus together
+    //graduates
     globeFlags:
       'https://www.pula24.co.bw/wp-content/uploads/2022/01/limko-5.jpg',
 
-    // African student working creatively / design
+    //design
     fashionStudio:
       'https://tacit-knowledge-architecture.com/wp-content/uploads/2022/10/6-1.jpg',
 
-    // Black students collaborating / group discussion
+    //group discussion
     groupDiscussion:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
-
-    // African university / modern campus building
+    //campus building
     campusInnovation:
       'https://tse2.mm.bing.net/th/id/OIP.zym4M6nsyo0tZwY5-UDuuwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
   };
@@ -36,15 +35,15 @@ export default function Home({ navigation }) {
       style={[styles.container, { backgroundColor: isDark ? '#000' : '#f8fafc' }]}
       contentContainerStyle={styles.contentContainer}
     >
-      {/* Logo */}
+      {/*Logo*/}
       <Image source={{ uri: logoUrl }} style={styles.logo} resizeMode="contain" />
 
-      {/* Headline */}
+      {/*Headline*/}
       <Text style={[styles.headline, { color: isDark ? '#f1f5f9' : '#0f172a' }]}>
         BE THE BEST{'\n'}BE A LIMKOKWING GRADUATE
       </Text>
 
-      {/* Hero image — African students on campus */}
+      {/*Hero image — African students on campus*/}
       <Image
         source={{ uri: images.globeFlags }}
         style={styles.heroImage}
@@ -56,7 +55,7 @@ export default function Home({ navigation }) {
         from 150+ countries across 3 continents.
       </Text>
 
-      {/* Benefits section */}
+      {/*Benefits section*/}
       <View style={styles.benefits}>
         <Text style={[styles.benefitTitle, { color: isDark ? '#60a5fa' : '#2563eb' }]}>
           Be the Best...
@@ -89,21 +88,21 @@ export default function Home({ navigation }) {
         </Text>
       </View>
 
-      {/* Campus life images */}
-      {/* African student in creative/design setting */}
+      {/*Campus life images*/}
+      {/*African student in creative/design setting*/}
       <Image
         source={{ uri: images.fashionStudio }}
         style={styles.inlineImage}
         resizeMode="cover"
       />
-      {/* Black students collaborating together */}
+      {/*students collaborating together*/}
       <Image
         source={{ uri: images.groupDiscussion }}
         style={styles.inlineImage}
         resizeMode="cover"
       />
 
-      {/* Programmes teaser */}
+      {/*Programmes teaser*/}
       <Text style={[styles.sectionTitle, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
         INNOVATIVE PROGRAMMES THAT SHAPE CAREERS OF THE FUTURE
       </Text>
@@ -119,14 +118,14 @@ export default function Home({ navigation }) {
         Diplomas & Degrees across creative & professional fields.
       </Text>
 
-      {/* Final campus innovation image */}
+      {/*Final campus innovation image */}
       <Image
         source={{ uri: images.campusInnovation }}
         style={styles.heroImage}
         resizeMode="cover"
       />
 
-      {/* Action Buttons */}
+      {/*Action Buttons*/}
       <View style={styles.buttons}>
         <TouchableOpacity
           style={[styles.enrolBtn, { backgroundColor: isDark ? '#047857' : '#10b981' }]}
@@ -138,7 +137,7 @@ export default function Home({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* Footer */}
+      {/*Footer*/}
       <Text style={[styles.footer, { color: isDark ? '#94a3b8' : '#64748b' }]}>
         Moshoeshoe Road, Maseru Central • PO Box 8971 Maseru 100 Lesotho{'\n'}
         Toll Free: 80022066 / 80022088 • +266 2231 5767{'\n'}

@@ -11,7 +11,7 @@ import {
   Linking,
 } from 'react-native';
 
-// ─── FACULTY DATA (from 2023 LUCT Prospectus) ────────────────────────────────
+//FACULTY DATA (from 2023 LUCT Prospectus) 
 const faculties = [
   {
     id: '1',
@@ -404,7 +404,7 @@ const faculties = [
 
 const MAX_RATING = 6;
 
-// ─── STAR RATING COMPONENT ────────────────────────────────────────────────────
+// STAR RATING COMPONENT
 function StarRating({ rating, onRate, isDark }) {
   return (
     <View style={ratingStyles.container}>
@@ -444,7 +444,7 @@ const ratingStyles = StyleSheet.create({
   score: { fontSize: 13, fontWeight: '600' },
 });
 
-// ─── COURSE DETAIL VIEW ───────────────────────────────────────────────────────
+//COURSE DETAIL VIEW 
 function CourseDetail({ course, isDark, onBack, rating, onRate }) {
   return (
     <ScrollView
@@ -455,7 +455,7 @@ function CourseDetail({ course, isDark, onBack, rating, onRate }) {
         <Text style={[styles.back, { color: isDark ? '#60a5fa' : '#2563eb' }]}>← Back</Text>
       </TouchableOpacity>
 
-      {/* Course image */}
+      {/*Course image*/}
       <Image
         source={{ uri: course.image }}
         style={styles.courseImage}
@@ -470,7 +470,7 @@ function CourseDetail({ course, isDark, onBack, rating, onRate }) {
         {course.description}
       </Text>
 
-      {/* Watch course video */}
+      {/*Watch course video*/}
       <TouchableOpacity
         style={[styles.videoBtn, { backgroundColor: isDark ? '#dc2626' : '#ef4444' }]}
         onPress={() => Linking.openURL(course.videoUrl).catch(console.error)}
@@ -478,7 +478,7 @@ function CourseDetail({ course, isDark, onBack, rating, onRate }) {
         <Text style={styles.videoBtnText}>▶  Watch Course Video</Text>
       </TouchableOpacity>
 
-      {/* ── RATING SYSTEM ─────────────────────────────────────────────────── */}
+      {/*RATING SYSTEM*/}
       <StarRating rating={rating} onRate={onRate} isDark={isDark} />
 
       {/* Entry requirements */}
@@ -494,7 +494,7 @@ function CourseDetail({ course, isDark, onBack, rating, onRate }) {
   );
 }
 
-// ─── FACULTY DETAIL VIEW ──────────────────────────────────────────────────────
+//FACULTY DETAIL VIEW
 function FacultyDetail({ faculty, isDark, onBack }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
@@ -534,7 +534,7 @@ function FacultyDetail({ faculty, isDark, onBack }) {
         <Text style={[styles.back, { color: isDark ? '#60a5fa' : '#2563eb' }]}>← Back to Faculties</Text>
       </TouchableOpacity>
 
-      {/* Faculty image */}
+      {/*Faculty image */}
       <Image source={{ uri: faculty.image }} style={styles.facultyImage} resizeMode="cover" />
 
       <Text style={[styles.header, { color: isDark ? '#f1f5f9' : '#0f172a' }]}>
@@ -545,7 +545,7 @@ function FacultyDetail({ faculty, isDark, onBack }) {
         {faculty.description}
       </Text>
 
-      {/* Faculty video */}
+      {/*Faculty video */}
       <TouchableOpacity
         style={[styles.videoBtn, { backgroundColor: isDark ? '#dc2626' : '#ef4444' }]}
         onPress={() => Linking.openURL(faculty.videoUrl).catch(console.error)}
@@ -564,7 +564,7 @@ function FacultyDetail({ faculty, isDark, onBack }) {
           onPress={() => setSelectedCourse(course)}
           activeOpacity={0.85}
         >
-          {/* Course thumbnail */}
+          {/*Course thumbnail */}
           <Image
             source={{ uri: course.image }}
             style={styles.courseThumbnail}
@@ -583,7 +583,7 @@ function FacultyDetail({ faculty, isDark, onBack }) {
               {course.description}
             </Text>
 
-            {/* Inline mini star display */}
+            {/*Inline mini star display */}
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
               {[1, 2, 3, 4, 5, 6].map(star => (
                 <Text
@@ -612,7 +612,7 @@ function FacultyDetail({ faculty, isDark, onBack }) {
   );
 }
 
-// ─── MAIN FACULTY SCREEN ──────────────────────────────────────────────────────
+//MAIN FACULTY SCREEN
 export default function Faculty() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -660,7 +660,7 @@ export default function Faculty() {
   );
 }
 
-// ─── STYLES ───────────────────────────────────────────────────────────────────
+//STYLES
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 16 },
   header: { fontSize: 26, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },

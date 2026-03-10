@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  useColorScheme,
-  TouchableOpacity,
-  ScrollView,
+import { View,Text,StyleSheet,useColorScheme,TouchableOpacity,ScrollView,
 } from 'react-native';
 
 const questions = [
@@ -177,7 +171,7 @@ export default function Quizzes({ navigation }) {
 
   const progressPct = ((currentQuestion + 1) / questions.length) * 100;
 
-  // ── WELCOME ────────────────────────────────────────────────────
+  //WELCOME
   if (screen === 'welcome') {
     return (
       <ScrollView style={[styles.root, { backgroundColor: bg }]}
@@ -190,7 +184,7 @@ export default function Quizzes({ navigation }) {
           </Text>
         </View>
 
-        {/* Headline */}
+        {/*Headline*/}
         <Text style={[styles.welcomeTitle, { color: textMain }]}>
           Find Your{'\n'}<Text style={styles.accent}>Perfect</Text>{'\n'}Faculty
         </Text>
@@ -199,7 +193,7 @@ export default function Quizzes({ navigation }) {
           Answer 8 quick questions and discover which Limkokwing programme was made for you.
         </Text>
 
-        {/* Quick stats */}
+        {/*Quick stats*/}
         <View style={[styles.statsRow, { backgroundColor: card, borderColor: border }]}>
           {[['8', 'Questions'], ['6', 'Faculties'], ['2 min', 'Duration']].map(([val, lbl], i) => (
             <View key={i} style={[styles.statCell, i < 2 && { borderRightWidth: 1, borderRightColor: border }]}>
@@ -230,14 +224,14 @@ export default function Quizzes({ navigation }) {
     );
   }
 
-  // ── QUIZ ───────────────────────────────────────────────────────
+  //QUIZ
   if (screen === 'quiz') {
     const q = questions[currentQuestion];
     return (
       <ScrollView style={[styles.root, { backgroundColor: bg }]}
         contentContainerStyle={styles.quizPad}>
 
-        {/* Progress */}
+        {/*Progress*/}
         <View style={styles.topRow}>
           <Text style={[styles.qCount, { color: textSub }]}>
             {currentQuestion + 1} / {questions.length}
@@ -299,7 +293,7 @@ export default function Quizzes({ navigation }) {
     );
   }
 
-  // ── RESULTS ────────────────────────────────────────────────────
+  //RESULTS
   const result = getResult();
   const meta = FACULTY_META[result.key];
 
@@ -319,7 +313,7 @@ export default function Quizzes({ navigation }) {
         <Text style={[styles.descText, { color: textMain }]}>{result.description}</Text>
       </View>
 
-      {/* Score breakdown */}
+      {/*Score breakdown */}
       <Text style={[styles.sectionLbl, { color: textSub, marginTop: 24 }]}>SCORE BREAKDOWN</Text>
       <View style={[styles.scoreCard, { backgroundColor: card, borderColor: border }]}>
         {Object.entries(scores)
@@ -355,7 +349,7 @@ const styles = StyleSheet.create({
   centerPad: { alignItems: 'center', padding: 24, paddingBottom: 60, paddingTop: 40 },
   quizPad: { padding: 24, paddingBottom: 60, paddingTop: 40 },
 
-  // Welcome
+  //Welcome
   pill: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, marginBottom: 28 },
   pillText: { fontSize: 13, fontWeight: '700' },
   welcomeTitle: { fontSize: 44, fontWeight: '900', textAlign: 'center', lineHeight: 52, marginBottom: 16 },
@@ -374,7 +368,7 @@ const styles = StyleSheet.create({
   startBtnText: { color: '#fff', fontSize: 17, fontWeight: '800' },
   note: { fontSize: 13 },
 
-  // Quiz
+  //Quiz
   topRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginBottom: 20 },
   qCount: { fontSize: 13, fontWeight: '700', width: 44 },
   progTrack: { flex: 1, height: 6, borderRadius: 3, overflow: 'hidden' },
@@ -391,7 +385,7 @@ const styles = StyleSheet.create({
   dotsRow: { flexDirection: 'row', gap: 6, marginTop: 24, alignItems: 'center', justifyContent: 'center' },
   dot: { height: 8, borderRadius: 4 },
 
-  // Results
+  //Results
   emojiCircle: { width: 100, height: 100, borderRadius: 50, alignItems: 'center', justifyContent: 'center', marginBottom: 16, marginTop: 4 },
   emojiLarge: { fontSize: 48 },
   matchLbl: { fontSize: 11, fontWeight: '700', letterSpacing: 1.5, marginBottom: 10 },
