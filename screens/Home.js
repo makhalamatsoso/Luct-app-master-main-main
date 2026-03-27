@@ -29,7 +29,7 @@ export default function Home() {
         bounces={true}
       >
 
-        {/* Logo */}
+        {/*Logo */}
         <View style={[s.logoRing, { borderColor: '#3b82f6' }]}>
           <View style={[s.logoCircle, { backgroundColor: card }]}>
             <Image source={{ uri: IMG.logo }} style={s.logo} resizeMode="cover" />
@@ -46,7 +46,7 @@ export default function Home() {
           BE THE BEST{'\n'}<Text style={s.accent}>LIMKOKWING</Text>{'\n'}GRADUATE
         </Text>
 
-        {/* Hero image */}
+        {/*Hero image */}
         <Image source={{ uri: IMG.hero }} style={s.heroImg} resizeMode="cover" />
 
         {/* Stats */}
@@ -59,7 +59,7 @@ export default function Home() {
           ))}
         </View>
 
-        {/* CTA */}
+        {/*CTA*/}
         <TouchableOpacity
           style={s.cta}
           onPress={() => Linking.openURL('https://www.limkokwing.com/page/lesotho').catch(console.error)}
